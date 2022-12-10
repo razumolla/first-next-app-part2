@@ -19,6 +19,13 @@ function Users() {
         loadUsers();
     }
 
+    const handleDeleteBtn = (id) => {
+        fetch(`api/users/${id}`, {
+            method: "DELETE",
+        });
+        loadUsers();
+    }
+
     return (
         <div>
             <h1>All Users </h1>
@@ -31,8 +38,10 @@ function Users() {
                 users?.map(user => {
                     return (
                         <div key={user.id}>
-                            {user.id} . 
-                            {user.name}
+                            <h3>{user.id} :  {user.name} </h3>
+                            <button onClick={() => handleDeleteBtn(user.id)}> Delete
+                            </button>
+                            
                             <hr />
                         </div>
                     )
