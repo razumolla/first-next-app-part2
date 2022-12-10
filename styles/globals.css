@@ -29,3 +29,12 @@ a {
 h1 {
   color: red;
 }
+
+.layout-header,
+.layout-footer {
+  height: 30px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}

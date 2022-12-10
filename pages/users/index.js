@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "../../components/Header";
 
 function Users() {
     const [users, setUsers] = useState([]);
@@ -50,5 +51,14 @@ function Users() {
         </div>
     );
 }
+
+Users.getLayout = function getLayout(page) {
+    return (
+      <>
+      <Header/>
+        <>{page}</>
+      </>
+    )
+  }
 
 export default Users;
